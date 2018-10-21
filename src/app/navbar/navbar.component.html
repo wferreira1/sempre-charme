@@ -1,0 +1,28 @@
+<nav class="custom-nav-color" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="titulo" href="#" class="white-text brand-logo">{{title}}</a>
+    
+    <ul class="right hide-on-med-and-down">
+      <li *NgFor="let opcao of opcoes">
+        <a class="white-text" [href]="opcao.link">{{opcao.name}}</a>
+      </li>
+    </ul>
+    <ul id="nav-mobile" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img src="#">
+          </div>
+          <a href="#user"><img class="circle" [src]="cliente.photo"></a>
+          <a href="#name"><span class="white-text name">{{cliente.nome}}</span></a>
+          <a href="#email"><span class="white-text email">{{cliente.login}}</span></a>
+        </div>
+      </li>
+      <div *NgFor="let opcao of opcoes" class="row">
+        <li *NgIf="opcao.name = 'Ajuda'"><div class="divider"></div></li>
+        <li><a [href]="opcao.link"><i class="material-icons">{{opcao.icon}}</i>{{opcao.name}}</a></li>
+      </div>
+    </ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons white-text">menu</i></a>
+  </div>
+</nav>
